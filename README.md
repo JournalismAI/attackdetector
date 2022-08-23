@@ -3,9 +3,9 @@ Our project aims to research hate speech on social networks (Twitter) for Portug
 
 
 🇧🇷  Abraji
-Reinaldo Chaves | Project Coordinator
+Reinaldo Chaves | Project Coordinator and 
 Schirlei Alves | Data Journalist
 
 🇲🇽  Data Crítica
-Fernanda Aguirre Ruiz | Data Analyst & Researcher
+Fernanda Aguirre Ruiz | Data Analyst & Researcher and 
 Gibran Mena Aguilar | Co-founder & Director
