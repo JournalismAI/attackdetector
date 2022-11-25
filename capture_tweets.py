@@ -1,3 +1,8 @@
+# -*- coding: utf-8
+# Reinaldo Chaves (reinaldo@abraji.org.br)
+# Script that every day captures tweets from Mexico and Brazil in the Twitter API
+# Profiles and keywords widely used in countries are sought to carry out attacks against journalists and environmental activists
+#
 
 import os
 import tweepy as tw
