@@ -1,4 +1,4 @@
-[![Abraji](img/Abraji.png)](https://www.abraji.org.br/)
+[![Abraji](img/abraji_logo.png)](https://www.abraji.org.br/)
 [![Data Crítica](img/Logo-Data-Critica.png)](https://datacritica.org/)
 
 ----
