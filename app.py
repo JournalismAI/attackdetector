@@ -1,4 +1,8 @@
-
+# -*- coding: utf-8
+# Reinaldo Chaves (reinaldo@abraji.org.br)
+# Script for the website https://attackdetector.herokuapp.com/
+# It's an app deployable on Heroku, using config vars
+#
 
 import dash 
 from dash.dependencies import Input, Output
