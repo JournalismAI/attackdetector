@@ -70,13 +70,20 @@ Our project had some changes along the way. Certain points were given more prior
 So, in summary, these were the main steps that we took:
 
 <b>Step 1</b>
-I would say was very important for us to better understand the problem of hate speech data, to map main victims, perpetrators of attacks, most used keywords, and how to work with this data using data science. We also spoke with researchers from Google and AWS, two companies that have created analytical and commercial tools just for hate speech in several languages, due to the relevance of this problem in the world. And we also had a lot of contact with the programmers at RockingData, an Argentinian start-up specializing in data science and artificial intelligence, who helped us a lot with our model.
 
-> In step 2 we learned more about extracting data on social networks
+Was very important for us to better understand the problem of hate speech data, to map main victims, perpetrators of attacks, most used keywords, and how to work with this data using data science. We also spoke with researchers from Google and AWS, two companies that have created analytical and commercial tools just for hate speech in several languages, due to the relevance of this problem in the world. And we also had a lot of contact with the programmers at RockingData, an Argentinian start-up specializing in data science and artificial intelligence, who helped us a lot with our model.
 
-> In step 3 we face the possibilities for automation and project infrastructure
+<b>Step 2</b>
 
-> And in step 4, we tested about 10 thousand tweets in Portuguese and Spanish with different models in BERT for sentiment analysis - with training and validation database. BERT is an open source machine learning framework for natural language processing (NLP). BERT is designed to help computers understand the meaning of ambiguous language in text by using surrounding text to establish context. Fer will talk more about this later
+We learned more about extracting data on social networks - see below
+
+<b>Step 3</b>
+
+We face the possibilities for automation and project infrastructure - see bellow
+
+<b>Step 4</b>
+
+And in step 4, we tested about 10 thousand tweets in Portuguese and Spanish with different models in BERT for sentiment analysis - with training and validation database. BERT is an open source machine learning framework for natural language processing (NLP). BERT is designed to help computers understand the meaning of ambiguous language in text by using surrounding text to establish context. See bellow more details
 
 
 ---
