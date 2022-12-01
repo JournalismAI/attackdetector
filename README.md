@@ -43,7 +43,27 @@ Data Crítica It is a collective of journalists and developers that uses data an
 ---
 
 ## Methodology
+Our project is about hate speech against journalists and environmental activists in Brazil and Mexico. The context of digital and coordinated hate attacks has a worldwide political importance today, influencing elections, public discussions and affecting the reputation of thousands of people. Let's show a little of the situation in Mexico and Brazil that shaped our project
 
+Data Critica and Abraji have works on digital aggression against journalists and environmental activists, as this restricts freedom of expression and affects the work of these professionals
+
+So using AI methods seemed like a way to improve our work and then, making this work public could help other professionals and the debate about digital attacks in our countries
+
+This type of digital intimidation has also been used in many countries to weaken democracies and increase the power of populist leaders. So we imagine that our work can also be used and improved in other nations.
+
+In the creation of our project we realized some problems and opportunities that this brought to solve
+
+Problem:
+/ Our project is about hate speech against journalists and environmental activists in Brazil and Mexico. And there is a risk context under which journalists and environmental activists carry out their work 
+/ And Online attacks are a form of coercion and silencing that can bypass the digital world 
+/ For example, the presidents of Mexico and Brazil use disqualifying the work of journalists as a tactic
+/ Mexico and Brazil, according to human rights and journalism organizations, have thousands of cases of digital harassment in recent years, which end up stimulating other problems, such as judicial harassment, physical aggression and other violence against these people
+
+And about the opportunities: 
+/ Using machine learning and NLP to find these digital assaults could make it faster to detect coordinated attacks against journalists and environmental activists
+/ These tools can help to more easily detect entities, subjects and keywords of these attacks, as well as their authors
+/ This work could help the tasks of investigative journalists and researchers who study hate speech and its impact on freedom of expression and democracy
+/ And also collaborate with advocacy actions and protection projects against digital attacks
 
 
 ---
