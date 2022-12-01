@@ -93,6 +93,18 @@ About the data we use in the project. We decided to include only the hate speech
 
 We requested the [Twitter academic account](https://developer.twitter.com/en/products/twitter-api/academic-research) that allows a larger extraction, of up to 10M per month, and we learned the commands to use and to build queries in two projects that use the Twitter API: [Twarc](https://twarc-project.readthedocs.io/en/latest/twarc2_en_us/) and [Tweepy](https://docs.tweepy.org/en/stable/)
 
+Example query in Twarc - collecting data via terminal:
+- Research and interviews to get the most offensive Portuguese keywords in Brazil against journalists
+blogueira OR jornalista burra OR  jornalista chata OR jornalista esquerda OR jornalista esquerdista OR jornalista esquerdopata OR jornalista fake OR jornalista feia OR jornalista horrorosa OR jornalista imbecil OR jornalista louca OR jornalista militante OR jornalista puta OR jornalista safada OR jornalista vagabunda OR jornazista
+
+- Construction of a querie in twarc2 (in the academic API) to enter these profiles and search for these keywords, in pt, without retweet, in the year 2022, with a limit of 10,000 tweets, including archived tweets, and creating the results.jsonl
+
+*twarc2 search "(from:Rconstantino OR from:brom_elisa OR from:mfriasoficial OR from:taoquei1 OR from:BolsonaroSP OR from:CarlosBolsonaro blogueira OR jornalista burra OR  jornalista chata OR jornalista esquerda OR jornalista esquerdista OR jornalista esquerdopata OR jornalista fake OR jornalista feia OR jornalista horrorosa OR jornalista imbecil OR jornalista louca OR jornalista militante OR jornalista puta OR jornalista safada OR jornalista vagabunda OR jornazista) lang:pt -is:retweet"  --start-time 2022-01-01 --end-time 2022-08-14 --limit 10000 --archive results.jsonl*
+
+After, transform into a CSV
+
+twarc2 csv results.jsonl tweets_with_attacks_journalists.csv
+
 ---
 ## Automation
 
