@@ -91,7 +91,7 @@ And in step 4, we tested about 10 thousand tweets in Portuguese and Spanish with
 ## Data
 About the data we use in the project. We decided to include only the hate speech disseminated by Twitter posts, because it is a social network with an [API](https://developer.twitter.com/en/docs/twitter-api), it is very widely used for this purpose in Mexico and Brazil, and we would not have time to implement other social media in time. 
 
-We requested the [Twitter academic account](https://developer.twitter.com/en/products/twitter-api/academic-research) that allows a larger extraction, of up to 10M per month, and we learned the commands to use and to build queries in two projects that use the Twitter API: Twarc and Tweepy
+We requested the [Twitter academic account](https://developer.twitter.com/en/products/twitter-api/academic-research) that allows a larger extraction, of up to 10M per month, and we learned the commands to use and to build queries in two projects that use the Twitter API: [Twarc](https://twarc-project.readthedocs.io/en/latest/twarc2_en_us/) and [Tweepy](https://docs.tweepy.org/en/stable/)
 
 ---
 ## Automation
