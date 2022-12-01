@@ -13,6 +13,7 @@ The project was developed as a collaboration between *[Abraji](https://www.abraj
 - [Introduction](#introduction)
 - [Methodology](#methodology)
 - [Data](#data)
+- [Automation](#automation)
 - [Labelling](#labelling)
 - [Pre-trained models](#pre-trained-models)
 - [Topic modeling](#topic-modeling)
@@ -111,6 +112,7 @@ The script that collects tweets daily is in this repository: capture_tweets.py
 
 ---
 ## Automation
+We learned alternatives to make the process of collecting and cleaning data automatic, and subsequent storage in a database that delivers the result to a website that is updated daily, with data and graphics. We looked for alternatives that were easier to program in Python and that were free or less expensive. For this we chose, at this point in the project, we chose Heroku (a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud with deployments). Second, to host the workflows of the site and automation we leave the scripts stored in Github. After, to create sites with Plotly/Dash (a framework for building data apps in Python), and finally upload and download databases in tables on Airtable. In addition to using Colab Pro to test and evaluate statistical sentiment analysis models
 
 ---
 ## Labelling
