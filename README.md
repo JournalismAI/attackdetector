@@ -33,6 +33,12 @@ Digital violence is known to have serious consequences for the psychological hea
 
 It is essential to analyse online attacks to understand how they work, who initiates them, who shares these messages, and what forms the attacks take. For example, it is important to understand whether they are misogynistic, racist, or a combination of various forms of hate speech.
 
+Who whe are
+Abraji (Brazilian Association of Investigative Journalism) is an NGO that has projects to improve investigative journalism in Brazil, and that involve data science, freedom of expression, transparency and advocacy
+
+Data Crítica It is a collective of journalists and developers that uses data analysis and visualization, programming languages, and network science to investigate critical issues: the environment, and racial, economic, and gender-based power imbalances.
+
+
 ---
 
 ## Methodology
