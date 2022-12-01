@@ -54,16 +54,16 @@ This type of digital intimidation has also been used in many countries to weaken
 In the creation of our project we realized some problems and opportunities that this brought to solve
 
 Problem:
-/ Our project is about hate speech against journalists and environmental activists in Brazil and Mexico. And there is a risk context under which journalists and environmental activists carry out their work 
-/ And Online attacks are a form of coercion and silencing that can bypass the digital world 
-/ For example, the presidents of Mexico and Brazil use disqualifying the work of journalists as a tactic
-/ Mexico and Brazil, according to human rights and journalism organizations, have thousands of cases of digital harassment in recent years, which end up stimulating other problems, such as judicial harassment, physical aggression and other violence against these people
++ Our project is about hate speech against journalists and environmental activists in Brazil and Mexico. And there is a risk context under which journalists and environmental activists carry out their work 
++ And Online attacks are a form of coercion and silencing that can bypass the digital world 
++ For example, the presidents of Mexico and Brazil use disqualifying the work of journalists as a tactic
++ Mexico and Brazil, according to human rights and journalism organizations, have thousands of cases of digital harassment in recent years, which end up stimulating other problems, such as judicial harassment, physical aggression and other violence against these people
 
 And about the opportunities: 
-/ Using machine learning and NLP to find these digital assaults could make it faster to detect coordinated attacks against journalists and environmental activists
-/ These tools can help to more easily detect entities, subjects and keywords of these attacks, as well as their authors
-/ This work could help the tasks of investigative journalists and researchers who study hate speech and its impact on freedom of expression and democracy
-/ And also collaborate with advocacy actions and protection projects against digital attacks
++ Using machine learning and NLP to find these digital assaults could make it faster to detect coordinated attacks against journalists and environmental activists
++ These tools can help to more easily detect entities, subjects and keywords of these attacks, as well as their authors
++ This work could help the tasks of investigative journalists and researchers who study hate speech and its impact on freedom of expression and democracy
++ And also collaborate with advocacy actions and protection projects against digital attacks
 
 
 ---
