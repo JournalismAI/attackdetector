@@ -65,6 +65,19 @@ And about the opportunities:
 + This work could help the tasks of investigative journalists and researchers who study hate speech and its impact on freedom of expression and democracy
 + And also collaborate with advocacy actions and protection projects against digital attacks
 
+Our project had some changes along the way. Certain points were given more priority and others we realized that we would not have time to implement this year. And we also thought that a website with an automated database and its respective visualizations would be the best way to show the statistical machine learning model that we have improved in these months
+
+So, in summary, these were the main steps that we took:
+
+<b>Step 1</b>
+I would say was very important for us to better understand the problem of hate speech data, to map main victims, perpetrators of attacks, most used keywords, and how to work with this data using data science. We also spoke with researchers from Google and AWS, two companies that have created analytical and commercial tools just for hate speech in several languages, due to the relevance of this problem in the world. And we also had a lot of contact with the programmers at RockingData, an Argentinian start-up specializing in data science and artificial intelligence, who helped us a lot with our model.
+
+> In step 2 we learned more about extracting data on social networks
+
+> In step 3 we face the possibilities for automation and project infrastructure
+
+> And in step 4, we tested about 10 thousand tweets in Portuguese and Spanish with different models in BERT for sentiment analysis - with training and validation database. BERT is an open source machine learning framework for natural language processing (NLP). BERT is designed to help computers understand the meaning of ambiguous language in text by using surrounding text to establish context. Fer will talk more about this later
+
 
 ---
 
