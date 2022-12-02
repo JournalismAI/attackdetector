@@ -102,6 +102,10 @@ blogueira OR jornalista burra OR  jornalista chata OR jornalista esquerda OR jor
 
 *twarc2 search "(from:Rconstantino OR from:brom_elisa OR from:mfriasoficial OR from:taoquei1 OR from:BolsonaroSP OR from:CarlosBolsonaro blogueira OR jornalista burra OR  jornalista chata OR jornalista esquerda OR jornalista esquerdista OR jornalista esquerdopata OR jornalista fake OR jornalista feia OR jornalista horrorosa OR jornalista imbecil OR jornalista louca OR jornalista militante OR jornalista puta OR jornalista safada OR jornalista vagabunda OR jornazista) lang:pt -is:retweet"  --start-time 2022-01-01 --end-time 2022-08-14 --limit 10000 --archive results.jsonl*
 
+Example to Spanish tweets:
+
+*twarc2 search "(to:BuenMadrazo OR to:CEMDA OR to:tiburon_pepe OR to:PabloMontanoB OR to:sikuaa OR ambientalista tonta OR ambientalista pendeja OR ambientalista tarada OR ambientalista estúpida OR ambientalista estupida OR activista tonta OR activista pendeja OR activista tarada OR activista estúpida OR activista estupida  OR indio tonto OR indio pendejo OR indio tarado OR indio estúpido OR indio estupido OR india estúpida OR india estupida) lang:es -is:retweet"  --start-time 2022-09-01 --end-time 2022-10-30 --limit 2000 --archive results.jsonl*
+
 After, transform into a CSV
 
 twarc2 csv results.jsonl tweets_with_attacks_journalists.csv
