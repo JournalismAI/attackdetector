@@ -30,7 +30,7 @@ In Mexico, from 2000 to date, the journalist protection organization [Artículo 
 
 In the 2021 [World Press Freedom Index](https://rsf.org/en/2021-world-press-freedom-index-journalism-vaccine-against-disinformation-blocked-more-130-countries), Reporters Without Borders places Brazil and Mexico on the list of countries where journalism is very risky – 111th and 143rd respectively – out of 180 countries. They share the “bad” classification with India (142nd) and Russia (at 150th), among others.
 
-Another example, in 2021, the Voces del Sur (VdS) Network recorded 4,930 alerts of violations of freedom of expression, freedom of the press, and the right of access to information in 14 countries in Latin America. This [report]([https://articulo19.org/](https://vocesdelsurunidas.org/wp-content/uploads/2022/11/SHADOW-REPORT-2021.pdf) in English details the situation in Mexico, Brazil and other Latin American countries.
+Another example, in 2021, the Voces del Sur (VdS) Network recorded 4,930 alerts of violations of freedom of expression, freedom of the press, and the right of access to information in 14 countries in Latin America. This [report](https://vocesdelsurunidas.org/wp-content/uploads/2022/11/SHADOW-REPORT-2021.pdf) in English details the situation in Mexico, Brazil and other Latin American countries.
 
 And this type of harassment and online attacks against journalists happens in the same way against environmental activists - another focus of our project. These people suffer intimidation, defamation and persecution for defending areas under environmental degradation in Brazil and Mexico.
 
