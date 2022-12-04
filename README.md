@@ -30,6 +30,8 @@ In Mexico, from 2000 to date, the journalist protection organization [Artículo 
 
 In the 2021 [World Press Freedom Index](https://rsf.org/en/2021-world-press-freedom-index-journalism-vaccine-against-disinformation-blocked-more-130-countries), Reporters Without Borders places Brazil and Mexico on the list of countries where journalism is very risky – 111th and 143rd respectively – out of 180 countries. They share the “bad” classification with India (142nd) and Russia (at 150th), among others.
 
+And this type of harassment and online attacks against journalists happens in the same way against environmental activists - another focus of our project. These people suffer intimidation, defamation and persecution for defending areas under environmental degradation in Brazil and Mexico.
+
 Digital violence is known to have serious consequences for the psychological health of journalists and land defender activists. The defender Samir Flores Soberanes was murdered in Mexico after being vilified by the Mexican government for his opposition to the Morelos Integral Project. The defender Bruno Pereira was also recently murdered along with journalist Dom Phillips in an investigation in the Yavari Valley in Brazil.
 
 It is essential to analyse online attacks to understand how they work, who initiates them, who shares these messages, and what forms the attacks take. For example, it is important to understand whether they are misogynistic, racist, or a combination of various forms of hate speech.
