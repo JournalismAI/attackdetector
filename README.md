@@ -128,7 +128,7 @@ Second, to host the workflows of the site and automation we leave the scripts st
 
 The [project's website](https://attackdetector.herokuapp.com/) is now live, and daily captures tweets with keywords in Portuguese and Spanish related to journalists and environmental activists. Through the [Heroku Scheduler](https://devcenter.heroku.com/articles/scheduler) feature, the [capture_tweets.py](https://github.com/JournalismAI/attackdetector/blob/main/capture_tweets.py) script does this automatically and sends the unduplicated results to two tables in Airtable. The script that controls the whole site is [app.py](https://github.com/JournalismAI/attackdetector/blob/main/app.py)
 
-Then, the not-yet-automated part of the project, we compare this new data every day with the data with which the statistical model of the project already made probability evaluations - it's a model of more than 1GB in size. These results and new evaluations then go to two new tables in Airtable, which are responsible for making the project's website visualizations. This is the [script](https://github.com/JournalismAI/attackdetector/blob/main/calculates%20ratings%20and%20updates%20airtable.py)
+Then, the not-yet-automated part of the project, we compare this new data every day with the data with which the statistical model of the project already made probability evaluations - it's a model of more than 1GB in size. These results and new evaluations then go to two new tables in Airtable, which are responsible for making the project's website visualizations. This is the [script](https://github.com/JournalismAI/attackdetector/blob/main/calculates%20ratings%20and%20updates%20airtable.py). Site views only consider ratings >= to 0.8, but in the tables are the raw data
 
 ---
 ## Labelling
