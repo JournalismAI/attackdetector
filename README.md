@@ -116,7 +116,7 @@ twarc2 csv results.jsonl tweets_with_attacks_journalists.csv
 
 This data collected with the help of Twarc helped implement and improve the sentiment analysis model we use (see below). Afterwards, Twitter data started to be collected daily, using Tweepy, and each post is evaluated in the BERT model.
 
-The script that collects tweets daily is in this repository: capture_tweets.py
+The script that collects tweets daily is in this repository: [capture_tweets.py](https://github.com/JournalismAI/attackdetector/blob/main/capture_tweets.py)
 
 ---
 ## Automation
