@@ -24,7 +24,7 @@ The project was developed as a collaboration between *[Abraji](https://www.abraj
 
 ## Introduction
 
-The motivation for this project is the rampant situation of violence against journalists in our countries. Between January and April 2022, Abraji identified 151 episodes of physical and verbal aggressions against journalists in Brazil (62.9% originated on the internet).
+The motivation for this project is the rampant situation of violence against journalists in our countries. Between January and April 2022, Abraji identified 151 episodes of physical and verbal aggressions against journalists in Brazil (62.9% originated on the internet). This year, 2022, Brazil had an extremely polarized election in October and, since October 30, when the election result was given, until November, 64 episodes involving physical aggression, death threats, expulsion of teams from public places were recorded.
 
 In Mexico, from 2000 to date, the journalist protection organization [Artículo 19](https://articulo19.org/) has documented 156 murders of journalists. 47 happened during the administration of former President Enrique Peña Nieto and 36 under current President Andrés Manuel López Obrador. 
 
