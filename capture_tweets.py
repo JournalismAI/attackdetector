@@ -28,7 +28,7 @@ api = tw.API(auth, wait_on_rate_limit=True)
 
 # search for keywords most likely in Brazil to be used in hate attacks against journalists and heavily attacked environmental profiles
 # Each search is limited to 500 characters
-new_search = "blogueira OR jornalista burra OR  jornalista chata OR jornalista esquerda OR jornalista esquerdista OR jornalista esquerdopata OR jornalista fake OR jornalista feia OR jornalista horrorosa OR jornalista imbecil OR jornalista louca OR jornalista militante OR jornalista puta OR jornalista safada OR jornalista vagabunda OR jornazista OR to:GuajajaraSonia OR to:ApibOficial OR to:obsclima OR to:fiscaldoibama OR to:claudioangelo -filter:retweets"
+new_search = "blogueira OR jornalista burra OR jornalista chata OR jornalista esquerda OR jornalista esquerdista OR jornalista esquerdopata OR jornalista fake OR jornalista feia OR jornalista horrorosa OR jornalista imbecil OR jornalista louca OR jornalista militante OR jornalista puta OR jornalista safada OR jornalista vagabunda -filter:retweets"
 
 # search the last seven days to the current date
 now = datetime.now()
@@ -87,7 +87,7 @@ for num, row in tweet_text.iterrows():
 		  
                  }
     clean_tweets.append(dicionario)
-df_clean_tweets = pd.DataFrame(clean_tweets)
+df_clean_tweets1 = pd.DataFrame(clean_tweets)
 #df_clean_tweets.info()
 #df_clean_tweets.to_excel('test.xlsx',sheet_name='Sheet1',index=False)
 
@@ -145,18 +145,18 @@ for num, row in tweet_text_e.iterrows():
 		  "likely_target_of_attack": 'environmental activists'
                  }
     clean_tweets.append(dicionario)
-df_clean_tweets_e = pd.DataFrame(clean_tweets)
+df_clean_tweets2 = pd.DataFrame(clean_tweets)
 #df_clean_tweets_e.info()
 
 
-frames = [df_clean_tweets, df_clean_tweets_e]
+frames = [df_clean_tweets1, df_clean_tweets2]
 df_clean_tweets_portuguese = pd.concat(frames)
 
 df_clean_tweets_portuguese = df_clean_tweets_portuguese.drop_duplicates(
   subset = ['author_name', 'text'],
   keep = 'last').reset_index(drop = True)
 
-
+df_clean_tweets_portuguese.info()
 
 # Airtable keys
 # https://airtable.com/api
@@ -194,53 +194,74 @@ for record in airtable_records:
     airtable_index.append(record['id'])
 df_current_data = pd.DataFrame(airtable_rows, index=airtable_index)
 
+
 # Unites current Tweepy scrape and stored data
-# Eliminate duplicate Tweet IDs
-frames = [df_current_data, df_clean_tweets_portuguese]
-all_data = pd.concat(frames)
+# Eliminate duplicate Tweet IDs and ['author_name', 'text']
+all_data = pd.merge(df_clean_tweets_portuguese, \
+    df_current_data, \
+    how = 'left',
+    left_on=['author_name','text'], \
+    right_on=['author_name','text'])
+
+all_data.info()
+all_data = all_data[["coordinates_x", "tweet_id_x", "expanded_url_x", "source_x", "created_at_x", "author_screen_name_x", "author_name", "location_x", "likely_target_of_attack_x", "text", "geo_x"]]
+
+all_data.rename(columns = {'coordinates_x':'coordinates'},inplace = True)
+all_data.rename(columns = {'tweet_id_x':'tweet_id'},inplace = True)
+all_data.rename(columns = {'expanded_url_x':'expanded_url'},inplace = True)
+all_data.rename(columns = {'source_x':'source'},inplace = True)
+all_data.rename(columns = {'created_at_x':'created_at'},inplace = True)
+all_data.rename(columns = {'author_screen_name_x':'author_screen_name'},inplace = True)
+all_data.rename(columns = {'location_x':'location'},inplace = True)
+all_data.rename(columns = {'likely_target_of_attack_x':'likely_target_of_attack'},inplace = True)
+all_data.rename(columns = {'geo_x':'geo'},inplace = True)
+
 all_data['tweet_id'] = all_data['tweet_id'].str.strip()
 #all_data.shape
 
 df_tweets_final = all_data.drop_duplicates(
   subset = ['author_name', 'text'],
   keep = 'last').reset_index(drop = True)
-#df_tweets_final.shape
 
-#all_data.to_excel('test.xlsx',sheet_name='Sheet1',index=False)
-
+df_tweets_final.info()
 
 # function to add new data to airtable
 def add_to_airtable(tweet_id, created_at, source, geo, coordinates, expanded_url, author_name, author_screen_name, location,text, likely_target_of_attack):
-    data = {
-        "records": [
-            {
-                "fields": {
-                    "tweet_id": str(tweet_id),
-                    "created_at": str(created_at),
-                    "source": str(source),
-                    "geo": str(geo),
-                    "coordinates": str(coordinates),
-                    "expanded_url": str(expanded_url),
-                    "author_name": str(author_name),
-                    "author_screen_name": str(author_screen_name),
-                    "location": str(location),
-                    "text": text,
-		    "likely_target_of_attack": str(likely_target_of_attack)
-                    }
-                }
-            ]
-        }
-    
-    data = json.dumps(data, indent=4, sort_keys=False, default=str)
-       
-    try:
-        r = requests.request("POST", ENDPOINT, headers=headers, data=data)
-    except requests.exceptions.HTTPError as err:
-        raise SystemExit(err)
-
-    #print(f"Response status code: {r.status_code}")
-
-    return r.status_code 
+	data = {
+		"records": [
+			{
+				"fields": {
+					"tweet_id": str(tweet_id),
+					"created_at": str(created_at),
+					"source": str(source),
+					"geo": str(geo),
+					"coordinates": str(coordinates),
+					"expanded_url": str(expanded_url),
+					"author_name": str(author_name),
+					"author_screen_name": str(author_screen_name),
+					"location": str(location),
+					"text": text,
+					"likely_target_of_attack": str(likely_target_of_attack)            
+					}
+				}
+			]
+		}
+	
+	data = json.dumps(data, indent=4, sort_keys=False, default=str)
+	
+	#print(data)
+	
+	try:
+		r = requests.request("POST", ENDPOINT, headers=headers, data=data)
+	except requests.exceptions.HTTPError as err:
+		raise SystemExit(err)
+		
+	#print(f"Response status code: {r.status_code}")
+	
+	#if r.status_code != 200:
+	#	print(f"Response status code: {r.status_code}")
+	
+	return r.status_code 
 
 
 # test for new data
@@ -248,16 +269,48 @@ size = len(df_tweets_final.index)
 if size != 0:
 	for num, row in df_tweets_final.iterrows():
 		tweet_id = row['tweet_id']
+		if tweet_id is None or tweet_id == "":
+			tweet_id = "nan"
+		
 		created_at = row['created_at']
+		if created_at is None or created_at == "":
+			created_at = "nan"
+		
 		source = row['source']
+		if source is None or source == "":
+			source = "nan"
+				
 		geo = row['geo']
+		if geo is None or geo == "":
+			geo = "nan"
+		
 		coordinates = row['coordinates']
+		if coordinates is None or coordinates == "":
+			coordinates = "nan"
+			
 		expanded_url = row['expanded_url']
+		if expanded_url is None or expanded_url == "":
+			expanded_url = "nan"
+				
 		author_name = row['author_name']
+		if author_name is None or author_name == "":
+			author_name = "nan"
+			
 		author_screen_name = row['author_screen_name']
+		if author_screen_name is None or author_screen_name == "":
+			author_screen_name = "nan"	
+		
 		location = row['location']
+		if location is None or location == "":
+			location = "nan"	
+			
 		text = row['text']
+		if text is None or text == "":
+			text = "nan"	
+			
 		likely_target_of_attack = row['likely_target_of_attack']
+		if likely_target_of_attack is None or likely_target_of_attack == "":
+			likely_target_of_attack = "nan"	
 		
 		add_to_airtable(tweet_id, created_at, source, geo, coordinates, expanded_url, author_name, author_screen_name, location,text,likely_target_of_attack)
 
@@ -692,9 +745,25 @@ for record in airtable_records:
 df_current_data = pd.DataFrame(airtable_rows, index=airtable_index)
 
 # Unites current Tweepy scrape and stored data
-# Eliminate duplicate Tweet IDs
-frames = [df_current_data, df_clean_tweets_spanish]
-all_data = pd.concat(frames)
+# Eliminate duplicate Tweet IDs and ['author_name', 'text']
+all_data = pd.merge(df_clean_tweets_spanish, \
+    df_current_data, \
+    how = 'left',
+    left_on=['author_name','text'], \
+    right_on=['author_name','text'])
+
+all_data = all_data[["coordinates_x", "tweet_id_x", "expanded_url_x", "source_x", "created_at_x", "author_screen_name_x", "author_name", "location_x", "likely_target_of_attack_x", "text", "geo_x"]]
+
+all_data.rename(columns = {'coordinates_x':'coordinates'},inplace = True)
+all_data.rename(columns = {'tweet_id_x':'tweet_id'},inplace = True)
+all_data.rename(columns = {'expanded_url_x':'expanded_url'},inplace = True)
+all_data.rename(columns = {'source_x':'source'},inplace = True)
+all_data.rename(columns = {'created_at_x':'created_at'},inplace = True)
+all_data.rename(columns = {'author_screen_name_x':'author_screen_name'},inplace = True)
+all_data.rename(columns = {'location_x':'location'},inplace = True)
+all_data.rename(columns = {'likely_target_of_attack_x':'likely_target_of_attack'},inplace = True)
+all_data.rename(columns = {'geo_x':'geo'},inplace = True)
+
 all_data['tweet_id'] = all_data['tweet_id'].str.strip()
 #all_data.shape
 
@@ -702,11 +771,7 @@ df_tweets_final_es = all_data.drop_duplicates(
   subset = ['author_name', 'text'],
   keep = 'last').reset_index(drop = True)
 
-#df_tweets_final_es.shape
-
-#all_data.to_excel('test.xlsx',sheet_name='Sheet1',index=False)
-
-
+df_tweets_final_es.info()
 
 
 

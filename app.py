@@ -18,17 +18,17 @@ import json
 import requests
 import plotly.express as px
 import plotly.graph_objects as go
+from dash import html
 import os
-
 
 app = dash.Dash(external_stylesheets = [ dbc.themes.FLATLY],)
 
-# BRAZIL
+## BRAZIL
 # Airtable keys
 # https://airtable.com/api
 
-AIRTABLE_BASE_ID_P = os.environ["AIRTABLE_BASE_ID_P"]
-AIRTABLE_TABLE_NAME = os.environ["AIRTABLE_TABLE_NAME"]
+AIRTABLE_BASE_ID_P = os.environ["AIRTABLE_BASE_ID_port_rated"]
+AIRTABLE_TABLE_NAME = os.environ["AIRTABLE_TABLE_NAME_rated"]
 AIRTABLE_API_KEY = os.environ["AIRTABLE_API_KEY"]
 
 ENDPOINT = f'https://api.airtable.com/v0/{AIRTABLE_BASE_ID_P}/{AIRTABLE_TABLE_NAME}'
@@ -80,7 +80,7 @@ conta_tipos_p = conta_tipos_p.head(10)
 
 figura1 = go.Figure([go.Bar(x = conta_tipos_p['top_authors_of_tweets'], y = conta_tipos_p['total_of_posts_found'], marker_color = 'yellow')])
 
-figura1.update_layout(title = 'See top 10 tweeters in Brazil',
+figura1.update_layout(title = 'See top 10 tweeters in Brazil - or more mentioned',
                   xaxis_title = 'Top authors of tweets',
                   yaxis_title = 'Total of posts found'
                   )
@@ -90,11 +90,11 @@ figura1.update_layout(title = 'See top 10 tweeters in Brazil',
 
 
 # MEXICO
-# Airtable keys
+# Airtable keys s
 # https://airtable.com/api
 
 
-AIRTABLE_BASE_ID_E = os.environ["AIRTABLE_BASE_ID_E"]
+AIRTABLE_BASE_ID_E = os.environ["AIRTABLE_BASE_ID_spa_rated"]
 
 ENDPOINT = f'https://api.airtable.com/v0/{AIRTABLE_BASE_ID_E}/{AIRTABLE_TABLE_NAME}'
 
@@ -141,7 +141,7 @@ conta_tipos_e = conta_tipos_e.head(10)
 
 figura2 = go.Figure([go.Bar(x = conta_tipos_e['top_authors_of_tweets'], y = conta_tipos_p['total_of_posts_found'], marker_color = 'green')])
 
-figura2.update_layout(title = 'See top 10 tweeters in Mexico',
+figura2.update_layout(title = 'See top 10 tweeters in Mexico - or more mentioned',
                   xaxis_title = 'Top authors of tweets',
                   yaxis_title = 'Total of posts found'
                   )
@@ -149,7 +149,7 @@ figura2.update_layout(title = 'See top 10 tweeters in Mexico',
 
 
 
-app.title = 'Hate tweets against journalists and environmental activists - Brazil and Mexico'
+app.title = 'Project Attack Detector'
 server = app.server
 
 PLOTLY_LOGO1 = "https://www.portaldosjornalistas.com.br/wp-content/uploads/2019/09/Abraji.png"
@@ -193,7 +193,7 @@ html.Br()
 html.Br()
 
 
-# -------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------
 
 size_p = str(size_p)
 size_e = str(size_e)
@@ -229,12 +229,23 @@ card_content2 = [
                
         )  
     ]
-# -------------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------------
 
 
 body_app = dbc.Container([
                  
         html.Br(),
+    
+        dbc.Row([
+        html.Div(id = 'link_div',
+                 children = [html.A(id = 'text1', children = 'Our project is about hate speech against journalists and environmental activists in Brazil and Mexico. The context of digital and coordinated hate attacks has a worldwide political importance today, influencing elections, public discussions and affecting the reputation of thousands of people. See more about our project, including the scripts, in this repository on ', style = {'fontSize':15}),
+                             html.A(id = 'text2', children = 'Github', href = 'https://github.com/JournalismAI/attackdetector', style = {'fontSize':15})
+                             
+                            ],
+                 style = {'textAlign':'center'})
+            ]),
+    
+    
         html.Br(),
 
         dbc.Row([
@@ -250,7 +261,7 @@ body_app = dbc.Container([
         html.Br(),
 
         
-        dbc.Row([html.Div(html.H4('See the Twitter users with the most hateful posts in Brazil against journalists (data collected since November 2022)'),
+        dbc.Row([html.Div(html.H4('See the Twitter users (or more mentioned) with the most hateful posts in Brazil against journalists or environmental activists (data collected since October 2022)'),
                       style = {'textAlign':'center','fontWeight':'bold','family':'georgia','width':'100%'})]),
 
         html.Br(),
@@ -281,8 +292,63 @@ body_app = dbc.Container([
 
 
         html.Br(),
-        html.Br()
+        html.Br(),
+    
+        html.H6(id = 'H53', children = 'More about the project', style = {'textAlign':'center',\
+                                            'marginTop':40,'marginBottom':40}),
+        html.Br(),
+        dbc.Row([
+        html.Div(id = 'link_div2',
+                 children = [html.A(id = 'text3', children = 'This project is part of the ', style = {'fontSize':15}),
+                             html.A(id = 'text4', children = '2022 JournalismAI Fellowship Programme', href = 'https://www.lse.ac.uk/media-and-communications/polis/JournalismAI/Fellowship-Programme', style = {'fontSize':15}),
+                             html.A(id = 'text5', children = '. The Fellowship brought together 46 journalists and technologists from across the world to collaboratively explore innovative solutions to improve journalism via the use of AI technologies. You can explore all the Fellowship projects ', style = {'fontSize':15}),
+                             html.A(id = 'text6', children = 'at this link.', href = 'https://www.lse.ac.uk/media-and-communications/polis/JournalismAI/Fellowship-Programme', style = {'fontSize':15})
+                             
+                            ],
+                 style = {'textAlign':'center'})
+            ]),
+    
+        html.Br(),
 
+        dbc.Row([
+        html.Div(id = 'link_div3',
+                 children = [html.A(id = 'text7', children = 'The project was developed as a collaboration between ', style = {'fontSize':15}),
+                             html.A(id = 'text8', children = 'Abraji', href = 'https://www.abraji.org.br/', style = {'fontSize':15}),
+                             html.A(id = 'text9', children = ' and ', style = {'fontSize':15}),
+                             html.A(id = 'text10', children = 'Data Crítica', href = 'https://datacritica.org/', style = {'fontSize':15}),
+                             html.A(id = 'text11', children = '. The fellows who contributed to the project are: Reinaldo Chaves (Project Coordinator-Abraji), Schirlei Alves (Data Journalist-Abraji), Fernanda Aguirre (Data Analyst & Researcher-Data Crítica) and Gibran Mena (Co-founder & Director-Data Crítica).', style = {'fontSize':15})
+                             
+                            ],
+                 style = {'textAlign':'center'})
+            ]),
+    
+        html.Br(),
+    
+        dbc.Row([
+        html.Div(id = 'link_div4',
+                 children = [html.A(id = 'text12', children = 'JournalismAI is a project of Polis – the journalism think-tank at the London School of Economics and Political Science – and it’s sponsored by the Google News Initiative. If you want to know more about the Fellowship and the other JournalismAI activities, ', style = {'fontSize':15}),
+                             html.A(id = 'text13', children = 'sign up for the newsletter', href = 'https://mailchi.mp/lse.ac.uk/journalismai', style = {'fontSize':15}),
+                             html.A(id = 'text14', children = ' or get in touch with the team via ', style = {'fontSize':15}),
+                             html.A(id = 'text15', children = 'hello@journalismai.info', href = 'mailto:hello@journalismai.info', style = {'fontSize':15})
+                             
+                            ],
+                 style = {'textAlign':'center'})
+            ]),
+    
+        html.Br(),
+    
+        dbc.Row([
+        html.Div(id = 'link_div5',
+                 children = [html.A(id = 'text16', children = 'Contact us - If you want to collaborate or just to know more about the project, please reach out to us: ', style = {'fontSize':15}),
+                             html.A(id = 'text17', children = 'reinaldo@abraji.org.br', href = 'mailto:reinaldo@abraji.org.br', style = {'fontSize':15}),
+                             html.A(id = 'text18', children = ' or ', style = {'fontSize':15}),
+                             html.A(id = 'text19', children = 'faguirre@datacritica.org', href = 'mailto:faguirre@datacritica.org', style = {'fontSize':15})
+                             
+                            ],
+                 style = {'textAlign':'center'})
+            ]),
+    
+         html.Br(),
 
          ],fluid = True)
 
