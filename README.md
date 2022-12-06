@@ -155,6 +155,14 @@ So far we have identified that the clusters are grouped according to the types o
 
 ## Future work
 
+About the plans for the project we have been thinking about
+
++ Improve infrastructure, storage and data capture techniques to collect more data
++ Implement new data visualizations and tools in the project, such as topic modeling, graphs of relationships between main attackers, main terms used, etc.
++ Look for partners in our countries and abroad to discuss issues of ethics and privacy, funding and technological improvement
++ Project content will be used for advocacy projects and investigations by Abraji and Data Critica and will also be made available to other organizations and researchers
+
+
 ---
 
 ## Contact us
