@@ -14,7 +14,6 @@ The project was developed as a collaboration between *[Abraji](https://www.abraj
 - [Methodology](#methodology)
 - [Data](#data)
 - [Automation](#automation)
-- [Labelling](#labelling)
 - [Pre-trained models](#pre-trained-models)
 - [Topic modeling](#topic-modeling)
 - [Future work](#future-work)
@@ -131,11 +130,15 @@ The [project's website](https://attackdetector.herokuapp.com/) is now live, and 
 Then, the not-yet-automated part of the project, we compare this new data every day with the data with which the statistical model of the project already made probability evaluations - it's a model of more than 1GB in size. These results and new evaluations then go to two new tables in Airtable, which are responsible for making the project's website visualizations. This is the [script](https://github.com/JournalismAI/attackdetector/blob/main/calculates%20ratings%20and%20updates%20airtable.py). Site views only consider ratings >= to 0.8, but in the tables are the raw data
 
 ---
-## Labelling
-
----
 
 ## Pre-trained models
+
+| Model | Type | both | es | pt |
+| :-: | :-: | :-: | :-: | :-: |
+| twitter-xlm-roberta-base-sentiment | Multilingual | ***0.86*** | ***0.89*** | ***0.83*** |
+| xlm-roberta-base | Multilingual | 0.843 | 0.89 | 0.81 |
+| distilbert-base-multilingual-cased | Multilingual | 0.82 | 0.87 | 0.77 |
+| bert-base-multilingual-uncased | Multilingual |  0.83 | 0.85 | 0.83 |
 
 ---
 
