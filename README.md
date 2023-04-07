@@ -37,6 +37,8 @@ Digital violence is known to have serious consequences for the psychological hea
 
 It is essential to analyse online attacks to understand how they work, who initiates them, who shares these messages, and what forms the attacks take. For example, it is important to understand whether they are misogynistic, racist, or a combination of various forms of hate speech.
 
+***See the links with tweets already analyzed by the model: [Portuguese](https://airtable.com/shrufoWmGOCM8vlM2/tblD0TrIex8jyY6Al) and [Spanish](https://airtable.com/shr3Oa34SwJ45MF5E/tblc3dgVodhvtSOWw)***
+
 *Who whe are*
 
 Abraji (Brazilian Association of Investigative Journalism) is an NGO that has projects to improve investigative journalism in Brazil, and that involve data science, freedom of expression, transparency and advocacy
