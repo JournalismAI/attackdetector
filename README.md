@@ -1,4 +1,4 @@
-# [Attack Detector](https://attackdetector.herokuapp.com/)
+# [Attack Detector](https://attackdetector.herokuapp.com/) - Site down because of Twitter's policy change
 
 This project is part of the [2022 JournalismAI Fellowship Programme](https://www.lse.ac.uk/media-and-communications/polis/JournalismAI/Fellowship-Programme). The Fellowship brought together 46 journalists and technologists from across the world to collaboratively explore innovative solutions to improve journalism via the use of AI technologies. You can explore all the Fellowship projects [at this link](https://www.lse.ac.uk/media-and-communications/polis/JournalismAI/Fellowship-Programme).
 
